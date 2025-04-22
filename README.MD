@@ -61,6 +61,7 @@ DONE
 - Save button with success/error feedback
 
 TODO
+- Restart Prometheus on apply to be sure that the configurations are actually going to start working
 - Form autocompletion with current YAML file as the "placeholder" before editing
 - Import/export YAML files
 - Better label placement
