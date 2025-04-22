@@ -1,0 +1,44 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: example
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - alertmanager.newfront.cloud:9093
+rule_files: []
+remote_write:
+  - url: http://victoriametricas.etc
+    remote_timeout: 30s
+    name: Victoria Metricas
+    basic_auth:
+      username: root
+      password: rootasdasd
+    write_relabel_configs: []
+scrape_configs:
+  - job_name: prometheus
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    static_configs:
+      - targets:
+          - localhost:9090
+        labels:
+          environment: production
+  - job_name: custom-target-groups
+    static_configs:
+      - labels:
+          group: Ceph
+        targets:
+          - 192.168.1.2:9100
+          - 192.168.1.1:9100
+          - 192.168.1.5:9100
+      - labels:
+          group: PVE
+        targets:
+          - 192.168.2.2:9100
+          - 192.168.2.1:9100
+          - 192.168.2.3:9100

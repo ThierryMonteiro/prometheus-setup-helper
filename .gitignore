@@ -1,0 +1,18 @@
+# General
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+*.swo
+.env
+.DS_Store
+
+# Django
+backend/db.sqlite3
+backend/staticfiles/
+backend/media/
+backend/venv
+# React
+./frontend/node_modules/
+./frontend/build/
