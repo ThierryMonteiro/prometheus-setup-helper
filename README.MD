@@ -66,7 +66,7 @@ TODO
 - Better label placement
 - Git-based versioning of configs
 - Show diff between old and new configuration before apply
-
+- Write some actual documentation to facilitate pull requests
 ---
 
 ## 🤝 Contributing
